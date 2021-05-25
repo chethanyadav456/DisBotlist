@@ -4,4 +4,8 @@
 
 
 > # Developers
-<a href="https://disbotlist.xyz/user/491577179495333903">👤 Blacky</a><br> <a href="https://disbotlist.xyz/user/835887877295439932">👤 Alive</a> <a href="https://disbotlist.xyz/user/801478547893387345">👤 Raaz</a>
+<a href="https://disbotlist.xyz/user/491577179495333903">👤 Blacky</a><br>
+
+<a href="https://disbotlist.xyz/user/835887877295439932">👤 Alive</a><br>
+
+<a href="https://disbotlist.xyz/user/801478547893387345">👤 Raaz</a><br>
