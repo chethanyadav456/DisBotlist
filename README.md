@@ -1,44 +1,12 @@
-# vCodes.xyz
-<a href="https://vcodes.xyz/dc" target="_blank"><img src="https://img.devsforum.net/tr/img/h1Z2X3.png" alt="Join our discord" width="256"></a><br>
-**NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
+# disbotlist.xyz
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="disbotlist" src="https://media.discordapp.net/attachments/841656048695246878/846739727256125460/20210521_162249.jpg?width=480&height=480"> 
 
-  > <h3 style="background-color: #000;">Change Log</h3>
-  > <p class="subtitle"> Some errors fixed.</p>
-  > <p class="subtitle"> Cards changed.</p>
-  > <p class="subtitle"> API updated.</p>
- <br><br>
- <br><br>
- 
-  > [English] <p class="subtitle"> We are not charities, you have conditions for use. Refuse the terms and open a private message group for us; "Didn't you share it for people to use?" Do not ask questions like.</p>
-  > [Türkçe] <p class="subtitle"> Biz hayır kurumu değiliz, kullanım için şartlarınız vardır. Şartları reddedip bize özel mesaj grubu açıp; "insanlar kullansın diye paylaşmadınız mı?" gibi sorular yöneltmeyin.</p>
-  
-  
+
+
 > # Developers
-<a href="https://github.com/iClaudette">👤 Claudette</a><br>
-<a href="https://github.com/tunarjs">👤 Tunar</a>
-
-
-## English
-# Setup
-<a>Fill in the json files, link the required information and now it's ready.</a>
-# Extra Terms of use
-<a>- You have the permission to shoot and share videos, but you have to mention us, our server, in the video.</a><br>
-<a>- You have the permission to share in writing, but you have to mention us, our server, in the article.</a><br>
-<a>- You can't speak in a "we did it" way.</a><br>
-<a>- You cannot sell it.</a>
-<br><br><br><br>
-## Türkçe
-# Kurulum
-<a>Json dosyalarını doldurun, gerekli bilgileri bağlayın ve şimdi hazır.</a>
-# Ekstra Kullanım Şartları
-<a>- Video çekerek paylaşma iznine sahipsiniz fakat video içerisinde bizden, sunucumuzdan bahsetmek zorundasınız.</a><br>
-<a>- Yazılı bir şekilde paylaşma iznine sahipsiniz fakat yazı içerisinden bizden, sunucumuzdan bahsetmek zorundasınız.</a><br>
-<a>- "Biz yaptık" şekilde konuşamazsın.</a><br>
-<a>- Satışını yapamazsınız.</a>
-
-<br><br><br><br><br><br>
-# Demo
-<a href="https://vcodes.xyz">vcodes.xyz</a>
+<a href="https://disbotlist.xyz/user/491577179495333903">👤 Blacky</a><br>
+<a href="https://disbotlist.xyz/user/835887877295439932">👤 Alive</a>
+<a href="https://disbotlist.xyz/user/801478547893387345">👤 Raaz</a>
 
 ## 💨 Run the projects
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/bot-list)<br>
