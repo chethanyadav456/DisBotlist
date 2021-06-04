@@ -10,4 +10,4 @@
 
 
 > # Credit 
-[INSPIRED FROM VCODES](https://vcodes.xyz/)
+[vcodes](https://vcodes.xyz/)
