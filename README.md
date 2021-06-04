@@ -9,5 +9,5 @@
 <a href="https://disbotlist.xyz/user/801478547893387345">👤 Raaz</a><br>
 
 
-> # Cradit 
-[vcodes.xyz](https://vcodes.xyz/)
+> # Credit 
+[CREDIT](https://vcodes.xyz/)
