@@ -1,7 +1,7 @@
 {
-  "name": "vCodes",
-  "version": "0.0.1",
-  "description": "vcodes.xyz",
+  "name": "DisBotlist",
+  "version": "1.0.0",
+  "description": "disbotlist.xyz",
   "main": "main.js",
   "scripts": {
     "start": "node main.js"
