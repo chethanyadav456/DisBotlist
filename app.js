@@ -35,7 +35,7 @@ app.get("/sitemap.xml", async function(req,res) {
     let link = "<url><loc>https://disbotlist.xyz/</loc></url>";
     let botdataforxml = await botsdata.find()
     botdataforxml.forEach(bot => {
-        link += "\n<url><loc>https://vcodes.xyz/bot/"+bot.botID+"</loc></url>";
+        link += "\n<url><loc>https://disbotlist.xyz/bot/"+bot.botID+"</loc></url>";
     })
     res.set('Content-Type', 'text/xml');
     res.send(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="https://www.google.com/schemas/sitemap-image/1.1">${link}</urlset>`);
