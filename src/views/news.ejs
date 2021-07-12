@@ -1,0 +1,79 @@
+<%- include('parts/head', {bot, user, path}) %>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="read here the latest news from the Disbots Development team.">
+  <title>Official Disbots News</title>
+  <meta name="publisher" content="2021, Official News OF disbots.xyz" />
+  <meta property="title" content="Official News OF disbots.xyz">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="Claudette">
+  <meta name="twitter:title" content="Official News OF disbots.xyz">
+  <meta name="twitter:description" content="read here the latest news from the Astro Development team.">
+  <meta name="twitter:image" content="../img/logo.png">
+  <meta property="og:url" content="/">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:title" content="Official News OF disbots.xyz">
+  <meta name="theme-color" content="#7289da">
+  <meta property="og:description" content="read here the latest news from the Astro Development team.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../img/logo.png">
+</head>
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<style>
+  .partner-ownerName {
+    color: #fff;
+    padding: 5px;
+  }
+  .partner-ownerName:hover {
+    color: #ccc;
+  }
+</style>
+<div class="container">
+<br><br><br><br>
+<center>
+<p class="has-text-white title is-large"><i class="fad fa-newspaper has-text-primary"></i>&nbsp;News</p>
+<!-- <p class="content has-text-white" style="margin-top: -20px;">Join our <a href="/dc">discord server</a> to partner with us.</p> -->
+</center>
+<div class="columns is-multiline is-desktop is-variable is-7 mt-3 pt-5">
+  <% db.get(`news`).map(a => { %>
+        <div class="col-md-6 col-lg-4 pb-3">
+          <div data-aos="fade-down">
+        <div class="card vcodes-card-custom bg-vcodes">
+          <div class="vcodes-card-custom-img" style="background-image: url(<%=a.banner%>);"></div>
+          <div class="vcodes-card-custom-avatar">
+            <img class="img-fluid" onerror="imgError(this);" src="<%=a.icon%>" alt="Avatar" />
+          </div>
+          <div class="card-body">
+           <div class="is-pulled-right mt-vcodes mt-1">
+                written by: <span class="card-title"><%= bot.users.cache.get(a.ownerID) ? bot.users.cache.get(a.ownerID).username : "undefined" %>#<%= bot.users.cache.get(a.ownerID) ? bot.users.cache.get(a.ownerID).discriminator : "0000" %></span>
+              </div>
+              <br>
+              <div class="is-pulled-right mt-vcodes mt-1">
+                publish date: <span class="card-title"><%= a.date %></span>
+                </div>
+            <br><h4 translate="no" class="card-title"><%= a.serverName %>
+              <span data-tooltip="Verified News" data-tooltip-location="top"><i class="fad fa-badge-check has-text-success"></i></span>
+            </h4>
+            <p translate="no" class="card-text vCodesbotDesc"><%= a.description %></p>
+          </div>
+        </div>
+          </div>
+      </div>
+  <% }) %>
+</div>
+</div>
+ <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
+ <button class="g-recaptcha" 
+        data-sitekey="6LeKwn0bAAAAAC8ERPF287E5aDcEjwF5EowN-4W8" 
+        data-callback='onSubmit' 
+        data-action='submit' style="display: none;">Submit</button>
+<%- include('parts/foot') %>
