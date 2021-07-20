@@ -1,0 +1,168 @@
+  
+﻿
+        module.exports = {
+            bot: {
+                token: "Your Discord Bot Token",This will Give Logs Hang the roles to bots and the bots devlopers
+                prefix: "Prefix",This help u to Control Some Commands that u find in https://github.com/disbotlist-xyz/DisBotlist/tree/main/src/commands 
+                owners: ["UserID","UserID"],Note If You want only 1 user id will be there then remove thiis - ,"UserID"
+                mongourl: "Your MongoDB URL",
+                servers: {
+                    token: "Your Server List Bot Token", This will used to do vote and bump servers
+                    prefix: "Prefix" this helps to vote and do bump from discord only
+                }
+            },
+        
+            website: {
+                callback: "https://yourprojectname.yourname.repl.co/callback", Example = https://disbotlist.uve.repl.co/callback
+                secret: "Your Discord Botlist Bot Token",U can get this in 
+                clientID: "", // Bot client id.
+                tags: [ "Moderation", "Fun", "Minecraft","Economy","Guard","NSFW","Anime","Invite","Music","Logging", "Web Dashboard", "Reddit", "Youtube", "Twitch", "Crypto", "Leveling", "Game", "Roleplay", "Utility", "Turkish" ],
+                languages: [
+                    { flag: 'gb', code: 'en', name: 'English' },
+                    { flag: 'tr', code: 'tr', name: 'Türkçe' },
+                    { flag: 'de', code: 'de', name: 'Deutsch' }
+                ],
+                servers: {
+                    tags: [
+                    {
+                        icon: "fal fa-code",
+                        name: "Development"
+                    },
+                    {
+                        icon: "fal fa-play",
+                        name: "Stream"
+                    },
+                    {
+                        icon: "fal fa-camera",
+                        name: "Media"
+                    },
+                    {
+                        icon: 'fal fa-building',
+                        name: 'Company'
+                    },
+                    {
+                        icon: 'fal fa-gamepad',
+                        name: 'Game'
+                    },
+                    {
+                        icon: 'fal fa-icons',
+                        name: 'Emoji'
+                    },
+                    {
+                        icon: 'fal fa-robot',
+                        name: 'Bot List'
+                    },
+                    {
+                        icon: 'fal fa-server',
+                        name: 'Server List'
+                    },
+                    {
+                        icon: 'fal fa-moon-stars',
+                        name: 'Turkish'
+                    },
+                    {
+                        icon: 'fab fa-discord',
+                        name: 'Support'
+                    },
+                    {
+                        icon: 'fal fa-volume',
+                        name: 'Sound'
+                    },
+                    {
+                        icon: 'fal fa-comments',
+                        name: 'Chatting'
+                    },
+                    {
+                        icon: 'fal fa-lips',
+                        name: 'NSFW'
+                    },
+                    {
+                      icon: "fal fa-comment-slash",
+                      name: "Challange"
+                    },
+                    {
+                      icon: "fal fa-hand-rock",
+                      name: "Protest"
+                    },
+                    {
+                      icon: "fal fa-headphones-alt",
+                      name: "Roleplay"
+                    },
+                    {
+                      icon: "fal fa-grin-alt",
+                      name: "Meme"
+                    },
+                    {
+                      icon: "fal fa-shopping-cart",
+                      name: "Shop"
+                    },
+                    {
+                      icon: "fal fa-desktop",
+                      name: "Technology"
+                    },
+                    {
+                      icon: "fal fa-laugh",
+                      name: "Fun"
+                    },
+                    {
+                      icon: "fal fa-share-alt",
+                      name: "Social"
+                    },
+                    {
+                      icon: "fal fa-laptop",
+                      name: "E-Spor"
+                    },
+                    {
+                      icon: 'fal fa-palette',
+                      name: 'Design'
+                    },
+                    {
+                      icon: 'fal fa-users',
+                      name: 'Community'
+                    }
+                    ]                
+                }
+            },
+        
+            server: {
+                id: "Your Discord BotList Server ID",
+                invite: "https://discord.gg/z7dBzygse4",
+                roles: {
+                    administrator: "role id",
+                    moderator: "role id",
+                    profile: {
+                        sitecreator : "role id",
+                        booster: "role id",
+                        sponsor: "role id",
+                        supporter: "role id",
+                        partnerRole: "role id"
+                    },
+                    codeshare: {
+                        javascript: "role id",
+                        html: "role id",
+                        substructure: "",
+                        bdfd: "role id", // Bot Designer For Discord
+                        fiveInvite: "",
+                        tenInvite: "",
+                        fifteenInvite: "",
+                        twentyInvite: ""
+                    },
+                    botlist: {
+                        developer: "role Id",
+                        certified_developer: "role id",
+                        bot: "role id",
+                        certified_bot: "role id",
+                    }
+                },
+                channels: {
+                    codelog: "channel id", The CodeLog Channel Id where code sharing log messages are given
+                    login: "channel id",
+                    webstatus: "channel id",
+                    uptimelog: "channel id",
+                    botlog: "channel id",
+                    votes: "channel id"
+                }
+            }
+        
+        
+        }
