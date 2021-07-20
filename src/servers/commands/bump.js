@@ -107,7 +107,7 @@ exports.help = {
 function msgError(msg, { channel }) {
     channel.send(new Discord.MessageEmbed()
     .setAuthor(global.clientSL.user.username,global.clientSL.user.avatarURL())
-    .setFooter('disbotlist.xyz/servers')
+    .setFooter('Add Server in disbotlist.xyz/servers/add')
     .setDescription(msg)
     .setColor("RED")
     )
