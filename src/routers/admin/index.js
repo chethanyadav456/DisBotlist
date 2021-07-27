@@ -22,8 +22,8 @@ app.get("/admin", global.checkAuth, async (req, res) => {
         roles:global.config.server.roles,
         channels: global.config.server.channels,
         codedata: codedata,
-        botdata: botdata, 
-        udata: udata, 
+        botdata: botdata,
+        udata: udata,
         siteD: siteD
     })
 });
@@ -37,7 +37,7 @@ app.get("/admin/unapproved", global.checkAuth, async (req, res) => {
         req: req,
         roles:global.config.server.roles,
         channels: global.config.server.channels,
-        botdata: botdata, 
+        botdata: botdata,
     })
 });
 app.get("/admin/approved", global.checkAuth, async (req, res) => {
@@ -50,7 +50,7 @@ app.get("/admin/approved", global.checkAuth, async (req, res) => {
         req: req,
         roles:global.config.server.roles,
         channels: global.config.server.channels,
-        botdata: botdata, 
+        botdata: botdata,
     })
 });
 app.get("/admin/certificate-apps", checkAuth, async (req, res) => {
@@ -64,7 +64,7 @@ app.get("/admin/certificate-apps", checkAuth, async (req, res) => {
         req: req,
         roles:global.config.server.roles,
         channels: global.config.server.channels,
-        botdata: botdata, 
+        botdata: botdata,
         apps: apps
     })
 });

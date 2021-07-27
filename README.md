@@ -1,5 +1,5 @@
 # disbotlist.xyz
-<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="disbotlist" src="https://media.discordapp.net/attachments/841656048695246878/846739727256125460/20210521_162249.jpg?width=480&height=480"> 
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="disbotlist" src="https://media.discordapp.net/attachments/841656048695246878/846739727256125460/20210521_162249.jpg?width=480&height=480">
 
 
 
@@ -9,5 +9,5 @@
 <a href="https://disbotlist.xyz/user/801478547893387345">👤 Raaz</a><br>
 
 
-> # Credit 
+> # Credit
 [vcodes](https://vcodes.xyz/)

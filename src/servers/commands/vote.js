@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
     context.textAlign = 'center'
     context.fillStyle = '#fff'
     context.fillText(kod1, 200, 90)
-    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'captcha.png'); 
+    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'captcha.png');
     let sorgu = new MessageButton()
     .setLabel(kod1)
     .setStyle("blurple")
@@ -70,18 +70,18 @@ exports.run = async (client, message, args) => {
 		    if(b.id == kod1) {
             let findUserr = await userData.findOne({ id: message.author.id, guild: message.guild.id });if(findUserr) return msg.delete().then(await msgError('You can vote only once every 30 minutes.', { channel: message.channel }));
 		      msg.delete().then( message.channel.send({ embed: correctButton, buttons: [ web ] }) )
-		          await userData.updateOne({ 
-			    	id: message.author.id 
-			      }, { 
-			    	$set: { 
+		          await userData.updateOne({
+			    	id: message.author.id
+			      }, {
+			    	$set: {
 			    		guild: message.guild.id,
                         date: Date.now()
 			    	}
 			   	  }, { upsert: true })
-		          await serverData.updateOne({ 
-			    	id: message.guild.id 
-			      }, { 
-			    	$inc: { 
+		          await serverData.updateOne({
+			    	id: message.guild.id
+			      }, {
+			    	$inc: {
 			    		votes: 1
 			    	}
 			   	  })

@@ -29,7 +29,7 @@
 <div class="row">
 <div class="container-fluid">
 <div class="row row-cols-1 row-cols-md-3">
-  
+
 
 <style>
 @-webkit-keyframes rainbow {
@@ -53,14 +53,14 @@
   100% {color: hsl(255, 100%, 50%);}
 }
 .text-animation {
--webkit-animation: rainbow-text 5s infinite alternate; 
+-webkit-animation: rainbow-text 5s infinite alternate;
 }
 
 .border-animation {
--webkit-animation: rainbow 5s infinite alternate; 
+-webkit-animation: rainbow 5s infinite alternate;
 }
 </style>
-  
+
 
 <% bot.guilds.cache.get(global.config.server.id).members.cache.filter(a => a.roles.cache.has(roles.sitecreator)).map(a => {%>
 <div class="vcodes_column">
@@ -127,7 +127,7 @@
 <% } %>
 <% } %>
 <% }) %>
-  
+
 <% bot.guilds.cache.get(global.config.server.id).members.cache.filter(a => a.roles.cache.has(roles.servermod)).map(a => {%>
 <% if(!bot.guilds.cache.get(global.config.server.id).members.cache.get(a.id).roles.cache.get(roles.administrator)) {%>
 <% if(!bot.guilds.cache.get(global.config.server.id).members.cache.get(a.id).roles.cache.get(roles.manager)) {%>
@@ -147,10 +147,10 @@
 <% } %>
 <% } %>
 <% }) %>
-  
-  
-  
-  
+
+
+
+
 <% bot.guilds.cache.get(global.config.server.id).members.cache.filter(a => a.roles.cache.has(roles.partnerstaff)).map(a => {%>
 <% if(!bot.guilds.cache.get(global.config.server.id).members.cache.get(a.id).roles.cache.get(roles.servermod)) {%>
 <% if(!bot.guilds.cache.get(global.config.server.id).members.cache.get(a.id).roles.cache.get(roles.administrator)) {%>
@@ -169,8 +169,8 @@
 <% } %>
 <% }) %>
 
-  
-  
+
+
 <% bot.guilds.cache.get(global.config.server.id).members.cache.filter(a => a.roles.cache.has(roles.moderator)).map(a => {%>
 <% if(!bot.guilds.cache.get(global.config.server.id).members.cache.get(a.id).roles.cache.get(roles.administrator)) {%>
 <% if(!bot.guilds.cache.get(global.config.server.id).members.cache.get(a.id).roles.cache.get(roles.servermod)) {%>
@@ -188,10 +188,10 @@
 <% } %>
 <% } %>
 <% }) %>
-  
-  
-  
-  
+
+
+
+
 <% bot.guilds.cache.get(global.config.server.id).members.cache.filter(a => a.roles.cache.has(roles.partnerstaff)).map(a => {%>
 <% if(!bot.guilds.cache.get(global.config.server.id).members.cache.get(a.id).roles.cache.get(roles.moderator)) {%>
 <% if(!bot.guilds.cache.get(global.config.server.id).members.cache.get(a.id).roles.cache.get(roles.administrator)) {%>

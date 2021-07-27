@@ -29,7 +29,7 @@ app.post("/add", global.checkAuth, async (req,res) => {
     if(!member){
       try{ await guild.members.fetch();
         member = guild.members.cache.get(req.user.id);
-      } catch (err) { 
+      } catch (err) {
       	res.send({ error: true, message: `Couldn't fetch the members of ${guild.id}: ${err}`})
       }
     }

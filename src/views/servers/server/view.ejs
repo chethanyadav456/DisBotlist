@@ -62,7 +62,7 @@
               </div>
               <div class="text-center">
                 <h3 translate="no">
-                  <%= sdb.name %> 
+                  <%= sdb.name %>
                  <% if(guildGet.partnerd === true) {%>
                     <a data-tooltip="Partnered with Discord"
                     data-tooltip-location="top"><i class="fad fa-badge-check bodyIcon"></i></a>
@@ -72,7 +72,7 @@
                     <%= sdb.shortDesc %>
                 </div>
              </div>
-            <% 
+            <%
             if(req.user) {
             if(guildGet.members.cache.get(req.user.id)) {
             if(guildGet.members.cache.get(req.user.id).permissions.has('ADMINISTRATOR')) {
@@ -80,7 +80,7 @@
             <div class="h6 mt-4">
                     <i class="fad fa-user-crown"></i> Owner Options
                   </div>
-    
+
                   <a href="/server/<%= sdb.id %>/edit" class="is-flex mt-1">
                     <div class="box-2-p"><i class="mt-1 fal fa-pencil"></i></div>
                     <p class="box-2">Edit Server</p>
@@ -120,14 +120,14 @@
                 <% if(admin.user.id === sdb.ownerID) { %>
                   &nbsp;<span data-tooltip="Guild Owner" data-tooltip-location="top"><i class="fa fa-crown has-text-warning"></i></span>
                 <% } %></p>
-                
+
               </a>
               <% }) %>
               <% if(sdb.id == sdb.id) {%>
               <div class="h6 mt-4">
                 <i class="fal fa-star"></i> Rating
               </div>
-              
+
               <div class="is-flex mt-1">
                 <div class="box-2-p"><i class="mt-1 fal fa-stars"></i></div>
                 <%
@@ -176,14 +176,14 @@
         Ratings & Reviews <span class="badge badge-danger">Beta v2.0</span>
       </h4>
       <%
-      if(req.user) { 
+      if(req.user) {
       if(sdb.ownerID != req.user.id) {
       let writedByUser;
       let writedLength = 0;
       %>
       <% if(sdb.rates) { %>
       <%
-      writedByUser = sdb.rates.map(x => x).filter(x => x.author === req.user.id); 
+      writedByUser = sdb.rates.map(x => x).filter(x => x.author === req.user.id);
       writedLength = writedByUser.length;
       %>
       <% } %>
@@ -203,10 +203,10 @@
                                 </div>
                               <form method="POST" id="myReviewForm" action="/server/<%= sdb.id %>/new-comment">
                                   <div class="rating">
-                                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
-                                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
-                                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
-                                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
+                                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
                                     <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                                   </div>
                                 <div style="padding-right: 5%;">
@@ -305,9 +305,9 @@
        if (i === 5 * page) break;
        let a = data.sort((a, b) => b.date - a.date)[i]
        let c = a;
-    %>  
+    %>
     <br>
-    <% 
+    <%
     let userRate = rateAuthors.find(user => user.id === c.author);
     %>
     <div class="card" style="border-radius: 5px;">
@@ -324,7 +324,7 @@
                                       <a href="/user/<%= userRate ? userRate.id : '' %>" class="is-size-5"><span translate="no" style="color: var(--body-text)"><%= userRate ? userRate.tag : 'undefined#0000' %></span> <small class="text-muted"><%= moment(c.date).fromNow(); %>&nbsp;<%= c.edit ? '(edited)' : '' %></small></a>
                                       &nbsp;
                                     </div>
-                                </div> 
+                                </div>
                                       <div class="stars-media">
                                         <% for(let i = 0; i < c.star_rate; i++) { %>
                                           <i class="fa fa-star text-warning" style="margin-right: 3px;"></i>
@@ -339,9 +339,9 @@
                             </div>
                              <% if(req.user && userRate) { %>
                              <div class="buttons mr-5" style="float: right">
-                             <% 
+                             <%
                              if(!c.reply) {
-                             if(req.user.id === sdb.ownerID) { 
+                             if(req.user.id === sdb.ownerID) {
                              %>
                               &nbsp;<button data-toggle="modal" data-target="#reply<%= userRate.id %>" id="replyButton" class="btn btn-vcodes"><i class="fal fa-reply"></i>&nbsp;Reply</button>
                               &nbsp;<button onclick="clickOnDeletReview('<%= userRate.id %>')" id="reviewDeleteButton<%= userRate.id %>" class="btn btn-vcodes"><i class="fal fa-trash"></i>&nbsp;Delete</button>
@@ -393,10 +393,10 @@
                                           $('#<%= c.star_rate %>').attr("checked", true);
                                         })
                                         </script>
-                                    <input type="radio" name="ratingEdit" value="5" id="5"><label for="5">☆</label> 
-                                    <input type="radio" name="ratingEdit" value="4" id="4"><label for="4">☆</label> 
-                                    <input type="radio" name="ratingEdit" value="3" id="3"><label for="3">☆</label> 
-                                    <input type="radio" name="ratingEdit" value="2" id="2"><label for="2">☆</label> 
+                                    <input type="radio" name="ratingEdit" value="5" id="5"><label for="5">☆</label>
+                                    <input type="radio" name="ratingEdit" value="4" id="4"><label for="4">☆</label>
+                                    <input type="radio" name="ratingEdit" value="3" id="3"><label for="3">☆</label>
+                                    <input type="radio" name="ratingEdit" value="2" id="2"><label for="2">☆</label>
                                     <input type="radio" name="ratingEdit" value="1" id="1"><label for="1">☆</label>
                                   </div>
                                 <div style="padding-right: 5%;">
@@ -415,8 +415,8 @@
                                 </div>
                              <% } %>
                              <% } %>
-                            
-                            
+
+
                         </div>
 
                     </div>
@@ -433,8 +433,8 @@
                                       &nbsp;
                                     </div>
 
-                                </div> 
-                                <span style="color: var(--body-text)" translate="no"><%= c.reply %></span>                           
+                                </div>
+                                <span style="color: var(--body-text)" translate="no"><%= c.reply %></span>
                              </div>
                              <% if(req.user) { %>
                              <% if(req.user.id === sdb.ownerID) { %>
@@ -468,7 +468,7 @@
                                 </div>
                                 </div>
                                 </div>
-                                
+
                              <% } %>
                             <% } %>
                             </div>
@@ -533,7 +533,7 @@
                 return;
             }
         }, 2000)
-    } 
+    }
     function clickOnMessage(userID) {
         $("#myEditButton" + userID).attr("disabled", true);
         $("#myEditButton" + userID).html('<i class="p-2 fad fa-spinner fa-w-16 fa-pulse fa-lg"></i>');
@@ -575,7 +575,7 @@
                 return;
             }
         }, 2000)
-    } 
+    }
     function clickOnEditReply(userID) {
         $("#clickOnEditReply" + userID).attr("disabled", true);
         $("#clickOnEditReply" + userID).html('<i class="p-2 fad fa-spinner fa-w-16 fa-pulse fa-lg"></i>');
@@ -617,7 +617,7 @@
                 return;
             }
         }, 2000)
-    } 
+    }
   function clickOnDeletReply(userID) {
     $("#replyDeleteButton" + userID).html('<i class="fa fa-spinner fa-pulse"></i>');
     $("#replyDeleteButton" + userID).attr("disabled", true);
@@ -659,7 +659,7 @@
       }
     })
     }, 2000);
-    } 
+    }
   function clickOnDeletReview(userID) {
     $("#reviewDeleteButton" + userID).html('<i class="fa fa-spinner fa-pulse"></i>');
     $("#reviewDeleteButton" + userID).attr("disabled", true);
@@ -701,9 +701,9 @@
       }
     })
     }, 2000);
-    } 
+    }
 </script>
-                                
+
 
 <div class="d-flex justify-content-center mt-4">
 <%
@@ -727,17 +727,17 @@ if (page != 1) {
     <i class="fal fa-arrow-right"></i>
 </a>
   <% } %></div>
-      
-      
+
+
    <% } else { %>
       <div class="alert alert-danger" role="alert">
        <span style="color: #fff!important;" class="is-size-5"><i class="fad fa-star"></i>&nbsp;<strong>Nooo..</strong></span><br>
        I couldn't find a review :( But you can be the first.
       </div>
    <% } %>
-      
+
   <% } %>
-      
+
     </div>
   </div>
   <br><br><br><br><br><br><br><br><br><br><br><br>

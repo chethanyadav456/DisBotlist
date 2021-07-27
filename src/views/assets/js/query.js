@@ -7,8 +7,8 @@
         factory(jQuery);
     }
 }(function ($) {
-    var slice = Array.prototype.slice; 
-    var splice = Array.prototype.splice; 
+    var slice = Array.prototype.slice;
+    var splice = Array.prototype.splice;
 
   var defaults = {
       topSpacing: 0,
@@ -17,7 +17,7 @@
       wrapperClassName: 'sticky-wrapper',
       center: false,
       getWidthFrom: '',
-      widthFromWrapper: true, 
+      widthFromWrapper: true,
       responsiveWidth: false,
       zIndex: 'inherit'
     },
@@ -298,4 +298,4 @@ if (window.innerWidth > 992) {
 	});
 
 }
-}); 
+});

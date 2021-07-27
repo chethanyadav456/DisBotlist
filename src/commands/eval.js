@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
     try {
       var code = args.join(" ");
       var evaled = eval(code);
- 
+
       if (typeof evaled !== "string")
         evaled = require("util").inspect(evaled);
       let Embed = new Discord.MessageEmbed()
@@ -20,14 +20,14 @@ if (Embed.description.length >= 2048)
       message.channel.send(`\`HATA\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
 };
- 
+
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
   permLevel: 0
 };
- 
+
 exports.help = {
   name: 'eval',
   description: 'Kod denemek için kullanılır.',

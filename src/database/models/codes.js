@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 let hm = new mongoose.Schema({
-code: String, 
+code: String,
 codeName: String,
 codeCategory: String,
 codeDesc: String,

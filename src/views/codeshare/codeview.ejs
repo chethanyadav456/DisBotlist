@@ -17,7 +17,7 @@
     textArea.select();
     document.execCommand("copy");
   }
-  
+
   document.getElementById('copybtn').addEventListener('click', copyFunction);</script>
 
 </head>
@@ -56,7 +56,7 @@
               </div>
               <div class="text-center">
                 <h3>
-                  <%= docs.codeName %> 
+                  <%= docs.codeName %>
                 </h3>
                 <div>
                     <%= docs.codeDesc %>
@@ -84,13 +84,13 @@
     </div>
     <div class="col-xl-8 order-xl-1">
         <% if(docs.main) {%>
-            <span style="float: right;cursor: pointer;transition: all 0.1s;font-size: 20px;" data-tooltip="Click and copy to clipboard" data-tooltip-location="top"> 
+            <span style="float: right;cursor: pointer;transition: all 0.1s;font-size: 20px;" data-tooltip="Click and copy to clipboard" data-tooltip-location="top">
                 <a class="btn copybtn" onclick="copy('main')"><i class="fad fa-copy has-text-white"></i></a>
                 </span>
             <pre style="background-color:#282c34; margin-left:15px; width:100%;display: block!important;"><code id="main"><%=docs.main%></code></pre>
       <% } %>
         <% if(docs.commands) {%>
-        <span style="float: right;cursor: pointer;transition: all 0.1s;font-size: 20px;" data-tooltip="Click and copy to clipboard" data-tooltip-location="top"> 
+        <span style="float: right;cursor: pointer;transition: all 0.1s;font-size: 20px;" data-tooltip="Click and copy to clipboard" data-tooltip-location="top">
             <a class="btn copybtn" onclick="copy('command')"><i class="fad fa-copy has-text-white"></i></a>
             </span>
             <pre style="background-color:#282c34; margin-left:15px; width:100%;"><code class="language-javascript line-numbers" data-src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.js" data-start="-5" id="command"><%= docs.commands %></code></pre>

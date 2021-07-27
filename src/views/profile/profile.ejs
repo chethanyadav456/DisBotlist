@@ -84,11 +84,11 @@
             <% } if (flag === "EARLY_SUPPORTER") { %>
             <span data-tooltip="Early Supporter" data-tooltip-location="top"><img draggable="false" src="https://discord.com/assets/23e59d799436a73c024819f84ea0b627.svg" data-tippy-content="Early Supporter" width="32px"></span>
             <% } }) %>
-            <% } %> 
+            <% } %>
             <% if(bannedCheck) { %>
             &nbsp;<span data-tooltip="Banned from DisBotlist" data-tooltip-location="top"> <i class="fad fa-ban has-text-danger" style="color: RED;bottom: -5px; font-size: 26px;"></i></span>
             <% } %>
-            </div>             
+            </div>
             <% if(pdata) {%>
             <% if(pdata.biography) { %>
             <p translate="no" class="mt-1 has-text-white"><%=pdata.biography%></p>
@@ -170,9 +170,9 @@
           </div>
         </div>
       <% } else { %>
-      <% 
+      <%
       if(req.user) {
-      if(req.user.id === a.ownerID || a.coowners.includes(req.user.id)) { 
+      if(req.user.id === a.ownerID || a.coowners.includes(req.user.id)) {
       %>
         <div class="col-md-6 col-lg-4 pb-3">
           <div class="card vcodes-card-custom bg-vcodes border-white border-0">
@@ -198,10 +198,10 @@
             </div>
           </div>
         </div>
-      <% 
+      <%
       }
       }
-      } 
+      }
       %>
       <% }) %>
 
@@ -247,7 +247,7 @@
       </div>
       <% }) %>
     </div>
-</div>    
+</div>
 </div>
 </div>
 </div>

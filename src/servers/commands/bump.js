@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
   	let lastDaily = findServer.bump;
   	if (cooldown - (Date.now() - lastDaily) > 0) {
     	return await msgError('This command is used only once every 30 minutes.', { channel: message.channel });
-    let timeObj = ms(cooldown - (Date.now() - lastDaily)); 
+    let timeObj = ms(cooldown - (Date.now() - lastDaily));
 	} else {
     let kod1 = client.makeid(6);
     let kod2 = client.makeid(6);
@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
     context.textAlign = 'center'
     context.fillStyle = '#fff'
     context.fillText(kod1, 200, 90)
-    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'captcha.png'); 
+    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'captcha.png');
     let sorgu = new MessageButton()
     .setLabel(kod1)
     .setStyle("blurple")
@@ -72,17 +72,17 @@ exports.run = async (client, message, args) => {
             let lastDailyy = findServerr.bump;
             if (cooldown - (Date.now() - lastDailyy) > 0)return msg.delete().then(await msgError('This command is used only once every 30 minutes.', { channel: message.channel }));
 		      msg.delete().then( message.channel.send({ embed: correctButton, buttons: [ web ] }) )
-		          await serverData.updateOne({ 
-			    	id: message.guild.id 
-			      }, { 
-			    	$set: { 
+		          await serverData.updateOne({
+			    	id: message.guild.id
+			      }, {
+			    	$set: {
 			    		bump: new Date().getTime()
 			    	}
 			   	  })
-		          await serverData.updateOne({ 
-			    	id: message.guild.id 
-			      }, { 
-			    	$inc: { 
+		          await serverData.updateOne({
+			    	id: message.guild.id
+			      }, {
+			    	$inc: {
 			    		bumps: 1
 			    	}
 			   	  })

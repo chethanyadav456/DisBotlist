@@ -11,7 +11,7 @@
        for (let i = (page - 1) * 6; i < data.length; i++) {
        if (i === 6 * page) break;
        let a = data.sort((a, b) => b.votes - a.votes)[i]
-    %>  
+    %>
     <% if(a.status === "Approved") { %>
     %>
       <div class="col-md-6 col-lg-4 pb-3">
@@ -40,7 +40,7 @@
         </div>
         </div>
       </div>
-      
+
              <% } %>
          <% } %>
          </div>
@@ -95,7 +95,7 @@ if (page != 1) {
     }).then((result) => {
   if (result.isConfirmed) {
     window.location.href = '/addbot';
-  }    
+  }
 })
     }
    </script>

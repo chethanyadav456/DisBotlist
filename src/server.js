@@ -60,39 +60,39 @@
     app.use("/css", express.static(path.resolve(`${templateDir}${path.sep}assets/css`)));
     app.use("/js", express.static(path.resolve(`${templateDir}${path.sep}assets/js`)));
     app.use("/img", express.static(path.resolve(`${templateDir}${path.sep}assets/img`)));
-  
+
     passport.serializeUser((user, done) => done(null, user));
     passport.deserializeUser((obj, done) => done(null, obj));
-  
+
     passport.use(new Strategy({
       clientID: config.website.clientID,
       clientSecret: config.website.secret,
-      callbackURL: config.website.callback,      
+      callbackURL: config.website.callback,
       scope: ["identify", "guilds", "guilds.join"]
     },
-    (accessToken, refreshToken, profile, done) => { 
+    (accessToken, refreshToken, profile, done) => {
       process.nextTick(() => done(null, profile));
     }));
-  
+
     app.use(session({
       store: new MemoryStore({ checkPeriod: 86400000 }),
       secret: "#@%#&^$^$%@$^$&%#$%@#$%$^%&$%^#$%@#$%#E%#%@$FEErfgr3g#%GT%536c53cc6%5%tv%4y4hrgrggrgrgf4n",
       resave: false,
       saveUninitialized: false,
     }));
-  
+
     app.use(passport.initialize());
     app.use(passport.session());
-  
-  
+
+
     app.engine("disbotlist-xyz", ejs.renderFile);
     app.set("view engine", "disbotlist-xyz");
-  
+
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
       extended: true
     }));
-  
+
     global.checkAuth = (req, res, next) => {
       if (req.isAuthenticated()) return next();
       req.session.backURL = req.url;
@@ -100,7 +100,7 @@
     }
    app.get("/login", (req, res, next) => {
       if (req.session.backURL) {
-        req.session.backURL = req.session.backURL; 
+        req.session.backURL = req.session.backURL;
       } else if (req.headers.referer) {
         const parsed = url.parse(req.headers.referer);
         if (parsed.hostname === app.locals.domain) {
@@ -135,7 +135,7 @@
         res.redirect(req.session.backURL || '/')
         client.users.fetch(req.user.id).then(async a => {
         client.channels.cache.get(channels.login).send(new Discord.MessageEmbed().setAuthor(a.username, a.avatarURL({dynamic: true})).setThumbnail(a.avatarURL({dynamic: true})).setColor("GREEN").setDescription(`[**${a.username}**#${a.discriminator}](https://DisBotlist.xyz/user/${a.id}) User named **site** logged in.`).addField("Username", a.username).addField("User ID", a.id).addField("User Discriminator", a.discriminator))
-        
+
         })
         }
     });
@@ -334,7 +334,7 @@
         var geoip = require('geoip-lite');
         var ip = ipInfo.clientIp;
         var geo = geoip.lookup(ip);
-        
+
         if(geo) {
           let sitedatas = require("./database/models/analytics-site.js")
           await sitedatas.updateOne({ id: config.website.clientID }, {$inc: {[`country.${geo.country}`]: 1} }, { upsert: true})
@@ -424,7 +424,7 @@
         renderTemplate(res, req, "/botlist/team.ejs", {
             roles,
             config,
-            req: req    
+            req: req
         });
     });
     app.get("/admin/premium-bots", checkMaintence, checkAdmin, checkAuth, async (req, res) => {
@@ -484,8 +484,8 @@
         const Database = require("void.db");
         const db = new Database(path.join(__dirname, './database/json/news.json'));
         const datum =  new Date().toLocaleString();
-         db.push(`news`, { 
-           code: createID(12), 
+         db.push(`news`, {
+           code: createID(12),
            icon: req.body.icon,
            banner: 'https://cdn.discordapp.com/banners/844856727517003818/354c9f9cc32596ba24f4034bf53c8454.jpg?size=4096',
            ownerID: req.user.id,
@@ -496,10 +496,10 @@
            description: req.body.partnerDesc
          })
          let rBody = req.body;
-        
+
 
        const webhook = require("webhook-discord");
-  
+
         const Hook = new webhook.Webhook("https://discord.com/api/webhooks/863599729657380865/pFmrUiOtjv-o-Fp0csX5pv-AoR6LuzvYUgrzR0tAGFKG_KMI5TV-3Ik_970iuErt517v");
         const msg = new webhook.MessageBuilder()
         .setName('Disbotlist | News')
@@ -510,9 +510,9 @@
         .setFooter(`Copyright © Disbotlist.xyz official 2021`)
         Hook.send(msg);
 
-       
+
          return res.redirect('/admin/news?success=true&message=News added.')
-         
+
     });
     function createID(length) {
     var result = '';
@@ -554,7 +554,7 @@
     });
     console.log(`
       [===========================================]
-          DisBotlist.xyz 
+          DisBotlist.xyz
           [===========================================]
       `)
     console.log("\x1b[32m", "System loading, please wait...")

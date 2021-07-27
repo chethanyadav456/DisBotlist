@@ -193,16 +193,16 @@ display: none;
         </tr>
     </thead>
     <tbody>
-        <% 
+        <%
         if(botdata.country) {
-        Object.keys(botdata.country).sort((a,b) => botdata.country[b] - botdata.country[a]).forEach(b => { 
+        Object.keys(botdata.country).sort((a,b) => botdata.country[b] - botdata.country[a]).forEach(b => {
         %>
         <tr>
           <td translate="no"><span style="display: flex; align-items: center;"><img src="https://www.countryflags.io/<%= b %>/flat/32.png">&nbsp;<%= b %></span></td>
           <td><span style="display: flex; align-items: center;"><%= botdata.country[b] %></span></td>
         </tr>
-        <% 
-        }) 
+        <%
+        })
         }
         %>
     </tbody>

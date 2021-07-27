@@ -1,9 +1,9 @@
-  
-﻿
+
+
         module.exports = {
             bot: {
                 token: "Your Discord Bot Token",This will Give Logs Hang the roles to bots and the bots devlopers
-                prefix: "Prefix",This help u to Control Some Commands that u find in https://github.com/disbotlist-xyz/DisBotlist/tree/main/src/commands 
+                prefix: "Prefix",This help u to Control Some Commands that u find in https://github.com/disbotlist-xyz/DisBotlist/tree/main/src/commands
                 owners: ["UserID","UserID"],Note If You want only 1 user id will be there then remove thiis - ,"UserID"
                 mongourl: "Your MongoDB URL",
                 servers: {
@@ -11,10 +11,10 @@
                     prefix: "Prefix" this helps to vote and do bump from discord only
                 }
             },
-        
+
             website: {
                 callback: "https://yourprojectname.yourname.repl.co/callback", Example = https://disbotlist.uve.repl.co/callback
-                secret: "Your Discord Botlist Bot Token",U can get this in 
+                secret: "Your Discord Botlist Bot Token",U can get this in
                 clientID: "", // Bot client id.
                 tags: [ "Moderation", "Fun", "Minecraft","Economy","Guard","NSFW","Anime","Invite","Music","Logging", "Web Dashboard", "Reddit", "Youtube", "Twitch", "Crypto", "Leveling", "Game", "Roleplay", "Utility", "Turkish" ],
                 languages: [
@@ -120,10 +120,10 @@
                       icon: 'fal fa-users',
                       name: 'Community'
                     }
-                    ]                
+                    ]
                 }
             },
-        
+
             server: {
                 id: "Your Discord BotList Server ID",
                 invite: "https://discord.gg/z7dBzygse4",
@@ -163,6 +163,6 @@
                     votes: "channel id"
                 }
             }
-        
-        
+
+
         }

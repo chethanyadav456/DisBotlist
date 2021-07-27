@@ -8,7 +8,7 @@
         </span>
         <h1 class="title" translate="no" style="font-weight: 800;color: #fff">Disbotlist</h1>
         <p class="content" style="opacity: 0.6; margin-top: -20px;color: #fff">Find the best Discord Bots for your server with Disbotlist!</p>
-        
+
             <div>
               <div class="z">
                 <form action="/search">
@@ -53,7 +53,7 @@
             $("#searchResultTitle").hide();
             $("#loadingIcon").hide();
         })
-        $("#search, .searchArea").hover(function () {  
+        $("#search, .searchArea").hover(function () {
           $(".searchArea").show();
         }, function () {
           $(".searchArea").hide();
@@ -82,7 +82,7 @@
               }
               $("#searchResultTitle").show();
               for (let i = 0; i < data.length; i++) {
-                if (i === 5) break; 
+                if (i === 5) break;
                 let bot = data[i];
                 message += `
                 <a href="/bot/${bot.botID}">
@@ -93,11 +93,11 @@
             `;
               }
               if (data.length > 5) {
-                $(".showMore").show();  
+                $(".showMore").show();
                 setInterval(() => {
                   $(".showMoreLink").attr("value", `/search?q=${$("#search").val()}&page=1`);
                 }, 100);
-                $(".showMore").click(function () { window.location.href = $(".showMoreLink").val(); });    
+                $(".showMore").click(function () { window.location.href = $(".showMoreLink").val(); });
               }
               $("#searchResults").html(message);
             }

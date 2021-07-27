@@ -15,7 +15,7 @@ app.get("/admin/uptimes", global.checkAuth, async (req, res) => {
         req: req,
         roles:global.config.server.roles,
         channels: global.config.server.channels,
-        updata: updata, 
+        updata: updata,
     })
 });
 

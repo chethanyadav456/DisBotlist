@@ -16,7 +16,7 @@
           prandomBots[randomIndex] = val;
         });
     %>
-     <% 
+     <%
         for(let i = 0; i < prandomBots.length; i++) {
         if (i === 3) break;
         let labBots = prandomBots[i];
@@ -39,7 +39,7 @@
              <% if(a.premium === "Premium") {%>
              <span data-tooltip="Premium Bot" data-tooltip-location="top"><i class="fad fa-diamond has-text-primary"></i></a>
                      <% } %>
-           
+
             <% if(a.certificate === "Certified") { %>
               <span data-tooltip="Verified Bot" data-tooltip-location="top"><i class="fad fa-badge-check bodyIcon"></i></span>
             <% } %>
@@ -54,7 +54,7 @@
       </div>
       </div>
     <% }} %>
-</div> 
+</div>
  <% if(botdata.filter(a => a.premium == "Premium").length > 6) { %>
   <center>
     <a title="disbotlist" href="/bots/premium" class="btn btn-more has-text-info">Show more premium bots</a>
@@ -171,8 +171,8 @@
       </div>
     <% }) %>
 </div>
-  
-  
+
+
 <br><br><br><br>
 <div class="column">
     <p class="has-text-white title is-large"><i class="fad fa-random has-text-success"></i>&nbsp;Random Bots</p>
@@ -187,7 +187,7 @@
           randomBots[randomIndex] = val;
         });
     %>
-    <% 
+    <%
         for(let i = 0; i < randomBots.length; i++) {
         if (i === 6) break;
         let labBots = randomBots[i];

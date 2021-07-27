@@ -35,7 +35,7 @@ exports.conf = {
     guildOnly: false,
     aliases: [],
   };
-  
+
   exports.help = {
     name: "botinfo",
     description: "",

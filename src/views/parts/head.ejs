@@ -27,7 +27,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
           <span class="fal fa-bars fa-2x"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarColor02">
           <ul class="navbar-nav mainlink mr-auto">
             <% if(!req.originalUrl.includes('/server')) { %>
@@ -81,7 +81,7 @@
             <a class="dropdown-item" href="/codes/categories"><i class="fal fa-code"></i>&nbsp;Code Share</a>
             <a class="dropdown-item" href="/uptime/links"><i class="fal fa-sync-alt"></i>&nbsp;Uptime</a>
             <% if(user) { %>
-                <% 
+                <%
                 let guild = bot.guilds.cache.get(config.server.id).members.cache.get(user.id);
                 if(guild) {
                 if(guild.roles.cache.get(roles.administrator) || guild.roles.cache.get(roles.moderator)) {
@@ -94,7 +94,7 @@
         </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <% 
+            <%
             let languages = global.config.website.languages;
             %>
 
@@ -110,8 +110,8 @@
                 </a>
                 <% }) %>
                 </div>
-                
-                
+
+
               </li>
           &nbsp;
             <% if(user) {%>

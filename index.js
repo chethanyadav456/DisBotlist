@@ -126,7 +126,7 @@ client.on("guildMemberAdd", async (member) => {
     try {
       guild.member(member.id).roles.add(config.server.roles.botlist.bot);
     } catch (error) {
-      
+
     }
   }
 });
@@ -134,7 +134,7 @@ client.on("guildMemberAdd", async (member) => {
 
 
 /*
-    SERVER LIST CLIENT 
+    SERVER LIST CLIENT
 */
 const serverClient = new Client();
 serverClient.login(config.bot.servers.token);

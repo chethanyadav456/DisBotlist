@@ -16,7 +16,7 @@ app.get("/admin/codes", global.checkAuth, async (req, res) => {
         req: req,
         roles:global.config.server.roles,
         channels: global.config.server.channels,
-        koddata: koddata, 
+        koddata: koddata,
     })
 });
 app.get("/admin/addcode", global.checkAuth, async (req, res) => {
@@ -44,7 +44,7 @@ app.get("/admin/editcode/:code", global.checkAuth, async (req, res) => {
         req: req,
         roles:global.config.server.roles,
         channels: global.config.server.channels,
-        koddata: koddata, 
+        koddata: koddata,
     })
 });
 app.get("/admin/deletecode/:code", global.checkAuth, async (req, res) => {

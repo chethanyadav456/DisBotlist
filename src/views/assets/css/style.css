@@ -73,12 +73,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-body);   
+  background: var(--bg-body);
 }
 
 ::-webkit-scrollbar-thumb {
   border: 1px solid #1E2023;
-  background-color: var(--bg-section);  
+  background-color: var(--bg-section);
 }
 
 .bg-vcodes {
@@ -219,7 +219,7 @@ body {
     min-height: 450px;
     box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
   }
-  
+
   .card-custom-img {
     height: 150px;
     min-height: 150px;
@@ -229,10 +229,10 @@ body {
     background-position: center;
     border-color: inherit;
   }
-  
+
   /* First border-left-width setting is a fallback */
 
-  
+
   .card-custom-avatar img {
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
@@ -307,12 +307,12 @@ body {
 	.dropdown-menu li{
 		position: relative;
 	}
-	.nav-item .submenu{ 
+	.nav-item .submenu{
 		display: none;
 		position: absolute;
 		left:100%; top:-7px;
 	}
-	.nav-item .submenu-left{ 
+	.nav-item .submenu-left{
 		right:100%; left:auto;
 	}
 }
@@ -893,17 +893,17 @@ hr {
     animation-name: animatebottom;
     animation-duration: 1s
   }
-  
+
   @-webkit-keyframes animatebottom {
-    from { bottom:-100px; opacity:0 } 
+    from { bottom:-100px; opacity:0 }
     to { bottom:0px; opacity:1 }
   }
-  
-  @keyframes animatebottom { 
-    from{ bottom:-100px; opacity:0 } 
+
+  @keyframes animatebottom {
+    from{ bottom:-100px; opacity:0 }
     to{ bottom:0; opacity:1 }
   }
-  
+
   #myDiv {
     display: none;
   }
@@ -931,7 +931,7 @@ hr {
 .github:hover {
       color: #000;
       transform: scale(1.5) translateY(-4px);
-}  
+}
 .discord {
     color: #fff;
     transition: all 0.2s;
@@ -945,8 +945,8 @@ hr {
     transition: all 0.2s;
 }
 .instagram:hover {
-    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
     background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: scale(1.5) translateY(-4px);
@@ -1411,7 +1411,7 @@ body .dribbble img {
         justify-content: center;
       }
   }
-  
+
   .avatar-sm {
     font-size: .875rem;
     width: 36px;
@@ -1429,7 +1429,7 @@ body .dribbble img {
   .card-profile-image {
     position: relative;
   }
-  
+
   .card-profile-image img {
     position: absolute;
     left: 50%;
@@ -1438,7 +1438,7 @@ body .dribbble img {
     transform: translate(-50%, -30%);
     border-radius: .375rem;
   }
-  
+
   .card-profile-image img:hover {
     transform: translate(-50%, -36%);
   }
@@ -1452,7 +1452,7 @@ body .dribbble img {
     font-weight: 600;
     letter-spacing: .025em;
   }
-  
+
   .heading-small {
     font-size: .75rem;
     padding-top: .25rem;
@@ -1468,26 +1468,26 @@ body .dribbble img {
     background-color: #5e72e4;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
   }
-  
+
   .btn-primary:hover {
     color: #fff;
     background-color: #5361ac;
   }
-  
+
   .btn-primary:focus {
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 0 rgba(94, 114, 228, .5);
   }
-  
+
   .btn-primary:disabled {
     color: #fff;
     background-color: #5e72e4;
   }
-  
+
   .btn-primary:not(:disabled):not(.disabled):active {
     color: #fff;
     background-color: #324cdd;
   }
-  
+
   .btn-primary:not(:disabled):not(.disabled):active:focus {
     box-shadow: none, 0 0 0 0 rgba(94, 114, 228, .5);
   }
@@ -1719,7 +1719,7 @@ abbr[data-title]:focus::after {
 
 /* PROFILE */
 .profile-nav, .profile-info{
-    margin-top:30px;   
+    margin-top:30px;
 }
 
 .profile-nav .user-heading {
@@ -2092,14 +2092,14 @@ a:hover{
     border-bottom-right-radius: 10px;
 }
 
-/* 
+/*
   You want a simple and fancy tooltip?
   Just copy all [data-tooltip] blocks:
 */
 [data-tooltip] {
     position: relative;
   }
-  
+
   /* Positioning and visibility settings of the tooltip */
   [data-tooltip]:before,
   [data-tooltip]:after {
@@ -2111,7 +2111,7 @@ a:hover{
     pointer-events: none;
     will-change: transform;
   }
-  
+
   /* The actual tooltip with a dynamic width */
   [data-tooltip]:before {
     content: attr(data-tooltip);
@@ -2130,18 +2130,18 @@ a:hover{
     transform: translate(-50%, -8px) scale(0.5);
     transition: all 0.1s!important;
   }
-  
+
   /* Tooltip arrow */
   [data-tooltip]:after {
     content: '';
     border-style: solid;
     border-width: 8px 8px 0px 8px; /* CSS triangle */
     border-color: var(--tooltip-bg) transparent transparent transparent;
-    transform-origin: top; 
+    transform-origin: top;
     transform: translateX(-50%) scaleY(0);
     transition: all 0.1s!important;
   }
-  
+
   /* Tooltip becomes visible at hover */
   [data-tooltip]:hover:before,
   [data-tooltip]:hover:after {
@@ -2152,7 +2152,7 @@ a:hover{
   [data-tooltip]:hover:before {
     transform: translate(-50%, -8px) scale(1);
   }
-  /* 
+  /*
     Arrow slide down effect only on mouseenter (NOT on mouseleave)
   */
   [data-tooltip]:hover:after {
@@ -2161,17 +2161,17 @@ a:hover{
   /*
     That's it.
   */
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   /*
     If you want some adjustability
     here are some orientation settings you can use:
   */
-  
+
   /* LEFT */
   /* Tooltip + arrow */
   [data-tooltip-location="left"]:before,
@@ -2180,7 +2180,7 @@ a:hover{
     right: calc(100% + 5px);
     bottom: 50%;
   }
-  
+
   /* Tooltip */
   [data-tooltip-location="left"]:before {
     transform: translate(-5px, 50%) scale(0.5);
@@ -2188,7 +2188,7 @@ a:hover{
   [data-tooltip-location="left"]:hover:before {
     transform: translate(-5px, 50%) scale(1);
   }
-  
+
   /* Arrow */
   [data-tooltip-location="left"]:after {
     border-width: 5px 0px 5px 5px;
@@ -2199,23 +2199,23 @@ a:hover{
   [data-tooltip-location="left"]:hover:after {
     transform: translateY(50%) scaleX(1);
   }
-  
-  
-  
+
+
+
   /* RIGHT */
   [data-tooltip-location="right"]:before,
   [data-tooltip-location="right"]:after {
     left: calc(100% + 5px);
     bottom: 50%;
   }
-  
+
   [data-tooltip-location="right"]:before {
     transform: translate(5px, 50%) scale(0.5);
   }
   [data-tooltip-location="right"]:hover:before {
     transform: translate(5px, 50%) scale(1);
   }
-  
+
   [data-tooltip-location="right"]:after {
     border-width: 5px 5px 5px 0px;
     border-color: transparent var(--tooltip-bg) transparent transparent;
@@ -2225,23 +2225,23 @@ a:hover{
   [data-tooltip-location="right"]:hover:after {
     transform: translateY(50%) scaleX(1);
   }
-  
-  
-  
+
+
+
   /* BOTTOM */
   [data-tooltip-location="bottom"]:before,
   [data-tooltip-location="bottom"]:after {
     top: calc(100% + 8px);
     bottom: auto;
   }
-  
+
   [data-tooltip-location="bottom"]:before {
     transform: translate(-50%, 8px) scale(0.5);
   }
   [data-tooltip-location="bottom"]:hover:before {
     transform: translate(-50%, 8px) scale(1);
   }
-  
+
   [data-tooltip-location="bottom"]:after {
     border-width: 0px 8px 8px 8px;
     border-color: transparent transparent var(--tooltip-bg) transparent;
@@ -2537,7 +2537,7 @@ color: #fff!important;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  
+
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -2670,12 +2670,12 @@ select.language:hover {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
   }
-  
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
   }
-  
+
   100% {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
@@ -2686,12 +2686,12 @@ select.language:hover {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(250, 166, 26, 0.7);
   }
-  
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 10px rgba(250, 166, 26, 0);
   }
-  
+
   100% {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(250, 166, 26, 0);
@@ -2702,12 +2702,12 @@ select.language:hover {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(67, 181, 129, 0.7);
   }
-  
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 10px rgba(67, 181, 129, 0);
   }
-  
+
   100% {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(67, 181, 129, 0);
@@ -2718,12 +2718,12 @@ select.language:hover {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(116, 127, 141, 0.7);
   }
-  
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 10px rgba(116, 127, 141, 0);
   }
-  
+
   100% {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(116, 127, 141, 0);
@@ -2762,7 +2762,7 @@ select.language:hover {
   font-size: 14px;
 }
 .status-text-online {
-    
+
   color: #46f154!important;
 }
 .status-text-dnd {

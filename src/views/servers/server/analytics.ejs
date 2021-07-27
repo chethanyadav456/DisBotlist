@@ -177,16 +177,16 @@ display: none;
         </tr>
     </thead>
     <tbody>
-        <% 
+        <%
         if(data.country) {
-        Object.keys(data.country).sort((a,b) => data.country[b] - data.country[a]).forEach(b => { 
+        Object.keys(data.country).sort((a,b) => data.country[b] - data.country[a]).forEach(b => {
         %>
         <tr>
           <td translate="no"><span style="display: flex; align-items: center;"><img src="https://www.countryflags.io/<%= b %>/flat/32.png">&nbsp;<%= b %></span></td>
           <td><span style="display: flex; align-items: center;"><%= data.country[b] %></span></td>
         </tr>
-        <% 
-        }) 
+        <%
+        })
         }
         %>
     </tbody>

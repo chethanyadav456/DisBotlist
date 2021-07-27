@@ -10,7 +10,7 @@
                     prefix: ""
                 }
             },
-        
+
             website: {
                 callback: "",
                 secret: "",
@@ -119,10 +119,10 @@
                       icon: 'fal fa-users',
                       name: 'Community'
                     }
-                    ]                
+                    ]
                 }
             },
-        
+
             server: {
                 id: "",
                 invite: "https://discord.gg/z7dBzygse4",
@@ -162,6 +162,6 @@
                     votes: ""
                 }
             }
-        
-        
+
+
         }

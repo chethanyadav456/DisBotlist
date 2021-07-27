@@ -59,7 +59,7 @@ app.get("/:guildID", async (req,res) => {
                 [`analytics.${referresURL}`]: 1
             }
         })
-        
+
     res.render("servers/server/view.ejs", {
         bot: global.clientSL,
         path: req.path,

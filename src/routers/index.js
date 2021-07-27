@@ -2,7 +2,7 @@ const app = require('express').Router();
 const botsdata = require("../database/models/botlist/bots.js");
 
 console.log("[DisBotlist.xyz]: Index router loaded.");
- 
+
 app.get("/", async (req,res) => {
     res.render("index.ejs", {
     	bot: global.Client,

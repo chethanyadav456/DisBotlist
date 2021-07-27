@@ -1,6 +1,6 @@
 /* custom tag button colors :) */
-	
-	
+
+
 	 .btn-mod {
 	   border-radius: 5px;
 	   background-color: #4e73df;
@@ -14,7 +14,7 @@
 	 .btn-mod:hover {
 	  background-color: #4262c2;
    color: var(--button-text-section);
-	 }	
+	 }
  .btn-music {
    border-radius: 5px;
    background-color: #1cc88a;
@@ -32,7 +32,7 @@
 
  .btn-fun {
    border-radius: 5px;
-  background-color: #f6c23e;   
+  background-color: #f6c23e;
   color: var(--button-text-section);
   padding-right: 10px;
    padding-left: 10px;
