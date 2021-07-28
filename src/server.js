@@ -24,6 +24,7 @@
   // MODELS
   const maintenceSchema = require('./database/models/maintence.js');
   const banSchema = require("./database/models/site-ban.js");
+  const db = require("./database/models/servers/server.js");
   const appsdata = require("./database/models/botlist/certificate-apps.js");
 
   module.exports = async (client) => {
@@ -139,208 +140,14 @@
         })
         }
     });
+    //why dose the console say Cannot read property 'id' of null ? i checked the database folder and in the servers file id is defined
     app.get("/logout", function (req, res) {
       req.session.destroy(() => {
         req.logout();
         res.redirect("/");
       });
     });
-    app.post("/server/:id", global.checkAuth, async (req, res) => {
-    let serverdata = await db.findOne({
-      id: req.params.id
-    });
-    client.users.fetch(serverdata.id).then(async server => {
-      client.users.fetch(serverdata.ownerID).then(async owner => {
-        if (server) {
-          await db.findOneAndUpdate({
-            id: serverdata.id
-          }, {
-              $set: {
-                ownerName: owner.username,
-                username: server.username,
-                discrim: server.discriminator,
-                avatar: server.avatarURL()
-              }
-            })
-        } else {
-          await db.findOneAndDelete({
-            id: serverdata.id
-          })
-        }
-      })
-    })
-    return res.redirect('/server/' + req.params.id);
-  })
-
-  app.post("/server/:id/new-comment", async (req, res) => {
-    let serverdata = await db.findOne({
-      id: req.params.id
-    });
-    if (!serverdata) return res.send({
-      error: "You entered an invalid server id."
-    });
-    if (!req.body.rating) {
-      await db.updateOne({
-        id: req.params.id
-      }, {
-          $push: {
-            rates: {
-              author: req.user.id,
-              star_rate: 1,
-              message: req.body.content,
-              date: Date.now()
-            }
-          }
-        })
-    } else {
-      await db.updateOne({
-        id: req.params.id
-      }, {
-          $push: {
-            rates: {
-              author: req.user.id,
-              star_rate: req.body.rating,
-              message: req.body.content,
-              date: Date.now()
-            }
-          }
-        })
-    }
-
-    return res.redirect('/server/' + req.params.id);
-  })
-  app.post("/server/:id/reply/:userID", async (req, res) => {
-    let serverdata = await db.findOne({
-      id: req.params.id
-    });
-    if (!serverdata) return res.send({
-      error: "You entered an invalid server id."
-    });
-    if (!req.params.userID) return res.send({
-      error: "You must enter a user id."
-    })
-    let message = req.body.replyM;
-    if (!message) return res.send({
-      error: "You must enter a reply message."
-    })
-    await db.update({
-      id: req.params.id,
-      'rates.author': req.params.userID
-    }, {
-        $set: {
-          'rates.$.reply': message
-        }
-      }, function(err, person) { if (err) return console.log(err); })
-    return res.redirect('/server/' + req.params.id);
-  })
-
-  app.post("/server/:id/edit/:userID", async (req, res) => {
-    let serverdata = await db.findOne({
-      id: req.params.id
-    });
-    if (!serverdata) return res.send({
-      error: "You entered an invalid server id."
-    });
-    if (!req.params.userID) return res.send({
-      error: "You must enter a user id."
-    })
-    let message = req.body.editM;
-    if (!message) return res.send({
-      error: "You must enter a edit message."
-    })
-    await db.update({
-      id: req.params.id,
-      'rates.author': req.params.userID
-    }, {
-        $set: {
-          'rates.$.star_rate': req.body.ratingEdit,
-          'rates.$.edit': message
-        }
-      }, function(err, person) { if (err) return console.log(err); })
-    return res.redirect('/server/' + req.params.id);
-  })
-  app.post("/server/:id/reply/:userID/edit", async (req, res) => {
-    let serverdata = await db.findOne({
-      id: req.params.id
-    });
-    if (!serverdata) return res.send({
-      error: "You entered an invalid server id."
-    });
-    if (!req.params.userID) return res.send({
-      error: "You must enter a user id."
-    })
-    let message = req.body.editReplyM;
-    if (!message) return res.send({
-      error: "You must enter a new reply message."
-    })
-    await db.update({
-      id: req.params.id,
-      'rates.author': req.params.userID
-    }, {
-        $set: {
-          'rates.$.reply': message
-        }
-      }, function(err, person) { if (err) return console.log(err); })
-    return res.redirect('/server/' + req.params.id);
-  })
-  app.post("/server/:id/reply/:userID/delete", async (req, res) => {
-    let serverdata = await db.findOne({
-      id: req.params.id
-    });
-    if (!serverdata) return res.send({
-      error: "You entered an invalid server id."
-    });
-    if (!req.params.userID) return res.send({
-      error: "You must enter a user id."
-    })
-    await db.update({
-      id: req.params.id,
-      'rates.author': req.params.userID
-    }, {
-        $unset: {
-          'rates.$.reply': null
-        }
-      }, function(err, person) { if (err) return console.log(err); })
-    return res.redirect('/server/' + req.params.id);
-  })
-  app.post("/server/:id/review/:userID/delete", async (req, res) => {
-    let serverdata = await db.findOne({
-      id: req.params.id
-    });
-    if (!serverdata) return res.send({
-      error: "You entered an invalid server id."
-    });
-    if (!req.params.userID) return res.send({
-      error: "You must enter a user id."
-    })
-    await db.update({
-      id: req.params.id,
-      'rates.author': req.params.userID
-    }, {
-        $unset: {
-          'rates.$.author': null,
-          'rates.$.star_rate': null,
-          'rates.$.message': null,
-          'rates.$.date': null,
-          'rates.$.edit': null,
-          'rates.$.reply': null
-        }
-      }, function(err, person) { if (err) return console.log(err); })
-    return res.redirect('/server/' + req.params.id);
-  })
-    app.use(async (req, res, next) => {
-        var getIP = require('ipware')().get_ip;
-        var ipInfo = getIP(req);
-        var geoip = require('geoip-lite');
-        var ip = ipInfo.clientIp;
-        var geo = geoip.lookup(ip);
-        
-        if(geo) {
-          let sitedatas = require("./database/models/analytics-site.js")
-          await sitedatas.updateOne({ id: config.website.clientID }, {$inc: {[`country.${geo.country}`]: 1} }, { upsert: true})
-        }
-        return next();
-    })
+    
     const http = require('http').createServer(app);
     const io = require('socket.io')(http);
     io.on('connection', socket => {
@@ -472,7 +279,62 @@
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
-   });
+}
+    app.get("/admin/maintence", global.checkAuth, async (req, res) => {
+    if (!config.bot.owners.includes(req.user.id)) return res.redirect('../admin');
+    res.render("admin/administrator/maintence.ejs", {
+        bot: global.Client,
+        path: req.path,
+        config: global.config,
+        user: req.isAuthenticated() ? req.user : null,
+        req: req,
+        roles:global.config.server.roles,
+        channels: global.config.server.channels
+    })
+});
+app.post("/admin/maintence", global.checkAuth, async (req, res) => {
+    if (!config.bot.owners.includes(req.user.id)) return res.redirect('../admin');
+    let bakimdata = await maintenceSchema.findOne({
+        server: config.server.id
+    });
+    if (bakimdata) return res.redirect('../admin/maintence?error=true&message=Maintenance mode has already been activated for this site.');
+    client.channels.cache.get(global.config.server.channels.webstatus).send(`<a:Dis_off:850922384080240640> Disbotlist has been switched to __Maintenance__ due to **${req.body.reason}** [||<@&844914717377691678>||]`).then(a => {
+        new maintenceSchema({
+            server: config.server.id,
+            reason: req.body.reason,
+            bakimmsg: a.id
+        }).save();
+    })
+    return res.redirect('../admin/maintence?success=true&message=Maintence opened.');
+});
+app.post("/admin/unmaintence", global.checkAuth, async (req, res) => {
+    const dc = require("discord.js");
+    if (!config.bot.owners.includes(req.user.id)) return res.redirect('../admin');
+    let bakimdata = await maintenceSchema.findOne({
+        server: config.server.id
+    });
+    if (!bakimdata) return res.redirect('../admin/maintence?error=true&message=The website is not in maintenance mode anyway.');
+    const bakimsonaerdikardesvcodes = new dc.MessageEmbed()
+        .setAuthor("disbotlist.xyz", client.user.avatarURL())
+        .setThumbnail(client.user.avatarURL())
+        .setColor("GREEN")
+        .setDescription(`<a:Dis_on:850922176718045185> Disbotlist are **active** again!\n[Click to redirect website](https://Disbotlist.xyz)`)
+        .setFooter("DisBotlist © All rights reserved.");
+    await client.channels.cache.get(channels.webstatus).messages.fetch(bakimdata.bakimmsg).then(a => {
+        a.edit(`~~ <a:online:833375738785824788> Disbotlist has been switched to __maintance__ due to **${bakimdata.reason}** ~~`, bakimsonaerdikardesvcodes)
+    })
+    client.channels.cache.get(channels.webstatus).send(".").then(b => {
+        b.delete({
+            timeout: 500
+        })
+    })
+    await maintenceSchema.deleteOne({
+        server: config.server.id
+    }, function(error, server) {
+        if (error) console.log(error)
+    });
+    return res.redirect('../admin/maintence?success=true&message=Maintenance mode has been shut down successfully.');
+});
     app.get("/admin/premium/delete/:botID", checkMaintence, checkAdmin, checkAuth, async (req, res) => {
         let rBody = req.body;
         await botsdata.findOneAndUpdate({
